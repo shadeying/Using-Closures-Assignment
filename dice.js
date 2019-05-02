@@ -2,7 +2,9 @@ function makeLoadedDie() {
   var list = [5, 4, 6, 1, 6, 4, 2, 3, 3, 5];
   /* your code here */
   var index = -1;
-  var numArray = [];
+
+  return function() {
+    var numArray = [];
     for(var i = 0; i < list.length; i++){
       for(var j = 1; j > 0; j++){
         var randomNum = Math.floor(1 + Math.random() * 6);
@@ -12,8 +14,6 @@ function makeLoadedDie() {
         }
       }
     }
-
-  return function() {
     index += 1;
     return numArray[index];
   }
